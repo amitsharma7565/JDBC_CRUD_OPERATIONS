@@ -12,7 +12,8 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
 		System.out.println("PRESS 1 to ADD student");
 		System.out.println("PRESS 2 to DELETE student");
 		System.out.println("PRESS 3 to DISPLAY student");
-		System.out.println("PRESS 4 to EXIT app");
+		System.out.println("PRESS 4 to UPDATE student");
+		System.out.println("PRESS 5 to EXIT app");
 		
 		int num=sc.nextInt();
 		
@@ -37,13 +38,22 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
 		}
 		else if(num==2) {
 			// delete student
+			System.out.println("Student id to delete");
+			int userId=sc.nextInt();
+			StudentDao.deleteStudent(userId);
 		}
 		else if(num==3) {
-			// display student
+			StudentDao.showAllStudent();
 		}
-		else if (num==4){
-			// exit app
-		 break; 
+//		else if (num==4){
+//			System.out.println("enter the id to update the student");
+//			int id=sc.nextInt();
+//			System.out.println("enter the coloumn name")
+//			String col = sc.next();
+//			StudentDao.updateStudent(id,col);
+//		}
+		else if(num==5) {
+			break;
 		}
 		else {
 			
