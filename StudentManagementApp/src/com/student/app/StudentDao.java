@@ -67,25 +67,25 @@ public class StudentDao {
 		 System.out.println("City "+city);
 		 System.out.println("+++++++++++++++++++++");
 	 }
-
 	}
 
-//	public static void updateStudent(int id,String col) {
-//		boolean f=false;
-//		Connection con=CP.createConnection();
-//		String sq="update student set column ?=? where id=?";
-//		//  user prepared statement
-//	 PreparedStatement pstmt=	con.prepareStatement(sq);
-//		// set the value of parameters in ?,?,?
-//	 
-//	 pstmt.setString(1,col );
-//	 pstmt.setInt(2, );
-//	 pstmt.setInt(3, id);
-//	 
-//	 // excute query
-//	 pstmt.executeUpdate();
-//	 f=true;
-//	return f; 
-//		
-//	}
+	public static void updateStudent(int id,String newName) throws ClassNotFoundException, SQLException {
+		boolean f=false;
+		Connection con=CP.createConnection();
+		String sq="update student set sname =? where sid=?";
+		//  user prepared statement
+	 PreparedStatement pstmt=	con.prepareStatement(sq);
+		// set the value of parameters in ?,?,?
+	 pstmt.setString(1,newName);
+	 pstmt.setInt(2, id);
+	 // excute query
+	 pstmt.executeUpdate();
+	 f=true;
+	if(f) {
+		System.out.println("its updated sucessFully");
+	}
+	else {
+		System.out.println("not updated");
+	}
+	}
 }

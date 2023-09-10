@@ -45,13 +45,13 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
 		else if(num==3) {
 			StudentDao.showAllStudent();
 		}
-//		else if (num==4){
-//			System.out.println("enter the id to update the student");
-//			int id=sc.nextInt();
-//			System.out.println("enter the coloumn name")
-//			String col = sc.next();
-//			StudentDao.updateStudent(id,col);
-//		}
+		else if (num==4){
+			System.out.println("enter the id to update the student");
+			int id=sc.nextInt();
+			System.out.println("enter the coloumn name");
+			String newName = sc.next();
+			StudentDao.updateStudent(id,newName);
+		}
 		else if(num==5) {
 			break;
 		}
